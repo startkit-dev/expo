@@ -1,5 +1,5 @@
-import EditScreenInfo from "@/components/EditScreenInfo";
-import { Text, View } from "@/components/Themed";
+import { EditScreenInfo } from "@/components/edit-screen-info"
+import { Text, View } from "@/components/themed"
 
 export default function TabTwoScreen() {
   return (
@@ -7,10 +7,10 @@ export default function TabTwoScreen() {
       <Text className="text-xl font-bold">Tab Two</Text>
       <View
         className="my-7 h-px w-4/5"
-        lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
+        lightColor="#eee"
       />
       <EditScreenInfo path="app/(tabs)/two.tsx" />
     </View>
-  );
+  )
 }

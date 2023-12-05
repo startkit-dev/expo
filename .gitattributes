@@ -1,0 +1,6 @@
+# Support bun.lockb files
+# Be sure to set:
+#
+# git config diff.lockb.textconv bun
+# git config diff.lockb.binary true
+*.lockb binary diff=lockb
