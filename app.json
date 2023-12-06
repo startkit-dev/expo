@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/expo-46.0.0.json",
   "expo": {
     "name": "startkit-expo",
     "slug": "startkit-expo",
