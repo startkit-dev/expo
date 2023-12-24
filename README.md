@@ -6,12 +6,14 @@
 
 ## Features
 
-- The latest [Expo 49](https://expo.dev)
+- The latest [Expo 50](https://expo.dev)
 - [Expo Router](https://docs.expo.dev/router/introduction/)
 - [Bun](https://bun.sh) as a package manager
 - [Typescript](https://www.typescriptlang.org/) for a rock-solid codebase
 - Strict, recommended [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) config using the [Vercel Style Guide](https://github.com/vercel/style-guide) for readable, safe code.
 - [TailwindCSS](https://tailwindcss.com/) for utility-first CSS via [Nativewind](https://www.nativewind.dev/)
+- Strict, recommended [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) config using the [Vercel Style Guide](https://github.com/vercel/style-guide) for readable, safe code.
+- Extra linting power with [Oxlint](https://oxc-project.github.io)
 - [Jest](https://jestjs.io/) testing, optimized for Expo.
 - Typeface preloading
 - Built-in Dark Mode support
@@ -91,3 +93,9 @@ bun run format:check
 ```sh
 bun run test
 ```
+
+## ❤️ Open Source
+
+This project is MIT-licensed and is free to use and modify for your own projects.
+
+It was created by [Matt Venables](https://venabl.es).

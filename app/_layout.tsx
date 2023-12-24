@@ -1,6 +1,5 @@
 import "@/assets/globals.css"
 
-import FontAwesome from "@expo/vector-icons/FontAwesome"
 import { SpaceMono_400Regular as SpaceMono } from "@expo-google-fonts/space-mono"
 import {
   DarkTheme,
@@ -24,12 +23,11 @@ export const unstable_settings = {
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync()
+void SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono,
-    ...FontAwesome.font
+    SpaceMono
   })
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
@@ -39,7 +37,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync()
+      void SplashScreen.hideAsync()
     }
   }, [loaded])
 
