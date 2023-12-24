@@ -45,7 +45,7 @@
 First, run the setup script to install all dependencies and create a local `.env.local` file:
 
 ```sh
-./bin/setup
+bun run setup
 ```
 
 ## Running the app
