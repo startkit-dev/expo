@@ -20,9 +20,6 @@
     "type-check": "tsc --noEmit --pretty",
     "web": "expo start --web"
   },
-  "resolutions": {
-    "react-refresh": "~0.14.0"
-  },
   "dependencies": {
     "@expo-google-fonts/space-mono": "^0.2.3",
     "@react-navigation/native": "^6.1.9",
