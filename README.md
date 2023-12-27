@@ -6,17 +6,18 @@
 
 ## Features
 
-- The latest [Expo 50](https://expo.dev)
+- The latest [Expo 50](https://expo.dev) SDK.
 - [Expo Router](https://docs.expo.dev/router/introduction/)
+- Toasts!
+- [TailwindCSS](https://tailwindcss.com/) for utility-first CSS via [Nativewind v4](https://www.nativewind.dev/v4/overview).
+- Built-in Dark Mode support
+- CSS Variables for themes
+- Async preloading with splash screen
 - [Bun](https://bun.sh) as a package manager
 - [Typescript](https://www.typescriptlang.org/) for a rock-solid codebase
 - Strict, recommended [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) config using the [Vercel Style Guide](https://github.com/vercel/style-guide) for readable, safe code.
-- [TailwindCSS](https://tailwindcss.com/) for utility-first CSS via [Nativewind](https://www.nativewind.dev/)
-- Strict, recommended [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) config using the [Vercel Style Guide](https://github.com/vercel/style-guide) for readable, safe code.
 - Extra linting power with [Oxlint](https://oxc-project.github.io)
 - [Jest](https://jestjs.io/) testing, optimized for Expo.
-- Typeface preloading
-- Built-in Dark Mode support
 
 ## Starting a new project with StartKit
 
@@ -68,6 +69,10 @@ bun run check
 
 ```sh
 bun run lint
+```
+
+```sh
+bun run oxlint
 ```
 
 ### Type Checking
