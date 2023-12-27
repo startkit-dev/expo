@@ -1,6 +1,7 @@
 import { Link, Tabs } from "expo-router"
 import { CodeIcon, InfoIcon } from "lucide-react-native"
-import { Pressable } from "react-native"
+
+import { Pressable } from "@/components/pressable"
 
 export default function TabLayout() {
   return (
@@ -14,18 +15,15 @@ export default function TabLayout() {
         options={{
           title: "Tab One",
           tabBarIcon: ({ color }) => (
-            <CodeIcon color={color} size={28} style={{ marginBottom: -3 }} />
+            <CodeIcon className="-mb-1" color={color} size={28} />
           ),
           headerRight: () => (
             <Link asChild href="/modal">
-              <Pressable>
-                {({ pressed }) => (
-                  <InfoIcon
-                    className="text-primary"
-                    size={25}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
+              <Pressable
+                className="mr-4 h-full w-11 items-center justify-center active:opacity-50"
+                haptics
+              >
+                <InfoIcon className="text-primary" size={25} />
               </Pressable>
             </Link>
           )
@@ -36,7 +34,7 @@ export default function TabLayout() {
         options={{
           title: "Tab Two",
           tabBarIcon: ({ color }) => (
-            <CodeIcon color={color} size={28} style={{ marginBottom: -3 }} />
+            <CodeIcon className="-mb-1" color={color} size={28} />
           )
         }}
       />

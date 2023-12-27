@@ -1,6 +1,6 @@
 import { EditScreenInfo } from "@/components/edit-screen-info"
-import { Text } from "@/components/elements/text"
-import { View } from "@/components/elements/view"
+import { Text } from "@/components/text"
+import { View } from "@/components/view"
 
 export default function TabOneScreen() {
   return (

@@ -1,7 +1,7 @@
 import { Link, Stack } from "expo-router"
 
-import { Text } from "@/components/elements/text"
-import { View } from "@/components/elements/view"
+import { Text } from "@/components/text"
+import { View } from "@/components/view"
 
 export default function NotFoundScreen() {
   return (

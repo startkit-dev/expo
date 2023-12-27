@@ -1,6 +1,6 @@
-import { ExternalLink } from "./elements/external-link"
-import { Text } from "./elements/text"
-import { View } from "./elements/view"
+import { ExternalLink } from "./external-link"
+import { Text } from "./text"
+import { View } from "./view"
 
 export function EditScreenInfo({ path }: { path: string }) {
   return (
