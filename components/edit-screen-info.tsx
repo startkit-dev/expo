@@ -1,34 +1,20 @@
-import { Colors } from "@/constants/colors"
-
-import { ExternalLink } from "./external-link"
-import { MonoText } from "./styled-text"
-import { Text, View } from "./themed"
+import { ExternalLink } from "./elements/external-link"
+import { Text } from "./elements/text"
+import { View } from "./elements/view"
 
 export function EditScreenInfo({ path }: { path: string }) {
   return (
     <View>
       <View className="mx-12 items-center">
-        <Text
-          className="text-center text-lg"
-          darkColor="rgba(255,255,255,0.8)"
-          lightColor="rgba(0,0,0,0.8)"
-        >
+        <Text className="text-center text-lg">
           Open up the code for this screen:
         </Text>
 
-        <View
-          className="my-2 rounded px-1"
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)"
-        >
-          <MonoText>{path}</MonoText>
+        <View className="my-2 rounded px-1">
+          <Text className="font-mono">{path}</Text>
         </View>
 
-        <Text
-          className="text-center text-lg"
-          darkColor="rgba(255,255,255,0.8)"
-          lightColor="rgba(0,0,0,0.8)"
-        >
+        <Text className="text-center text-lg">
           Change any of the text, save the file, and your app will automatically
           update.
         </Text>
@@ -39,7 +25,7 @@ export function EditScreenInfo({ path }: { path: string }) {
           className="py-4"
           href="https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet"
         >
-          <Text className="text-center" lightColor={Colors.light.tint}>
+          <Text className="text-center text-primary">
             Tap here if your app doesn&apos;t automatically update after making
             changes
           </Text>

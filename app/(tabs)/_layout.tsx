@@ -1,16 +1,12 @@
 import { Link, Tabs } from "expo-router"
 import { CodeIcon, InfoIcon } from "lucide-react-native"
-import { Pressable, useColorScheme } from "react-native"
-
-import { Colors } from "@/constants/colors"
+import { Pressable } from "react-native"
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme()
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint
+        tabBarActiveTintColor: "#CF364C"
       }}
     >
       <Tabs.Screen
@@ -25,7 +21,7 @@ export default function TabLayout() {
               <Pressable>
                 {({ pressed }) => (
                   <InfoIcon
-                    color={Colors[colorScheme ?? "light"].text}
+                    className="text-primary"
                     size={25}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                   />

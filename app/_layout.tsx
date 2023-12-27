@@ -1,6 +1,6 @@
 import "@/assets/globals.css"
 
-import { SpaceMono_400Regular as SpaceMono } from "@expo-google-fonts/space-mono"
+import { SpaceMono_400Regular as SpaceMono400Regular } from "@expo-google-fonts/space-mono"
 import {
   DarkTheme,
   DefaultTheme,
@@ -8,8 +8,8 @@ import {
 } from "@react-navigation/native"
 import { useFonts } from "expo-font"
 import { SplashScreen, Stack } from "expo-router"
+import { useColorScheme } from "nativewind"
 import { useEffect } from "react"
-import { useColorScheme } from "react-native"
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -27,7 +27,7 @@ void SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono
+    SpaceMono400Regular
   })
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
@@ -49,7 +49,7 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme()
+  const { colorScheme } = useColorScheme()
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
