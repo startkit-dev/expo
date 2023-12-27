@@ -9,6 +9,9 @@
 
     --primary: 346.8 77.2% 49.8%; /* #CF364C */
     --primary-foreground: 355.7 100% 97.3%; /* #fff1f2 */
+
+    --destructive: 0 84.2% 60.2%; /* #ef4444 */
+    --destructive-foreground: 0 0% 98%; /* #fafafa */
   }
 
   .dark:root {
@@ -17,5 +20,8 @@
 
     --primary: 346.8 77.2% 49.8%; /* #CF364C */
     --primary-foreground: 355.7 100% 97.3%; /* #fff1f2 */
+
+    --destructive: 0 62.8% 30.6%; /* #7f1d1d */
+    --destructive-foreground: 0 85.7% 97.3%; /* #fef2f2 */
   }
 }

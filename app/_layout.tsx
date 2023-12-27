@@ -11,6 +11,8 @@ import { SplashScreen, Stack } from "expo-router"
 import { useColorScheme } from "nativewind"
 import { useEffect } from "react"
 
+import { ToastContainer } from "@/components/toast-container"
+
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary
@@ -57,6 +59,9 @@ function RootLayoutNav() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
       </Stack>
+
+      {/* Toast should be the last item */}
+      <ToastContainer />
     </ThemeProvider>
   )
 }
