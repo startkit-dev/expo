@@ -1,11 +1,13 @@
 import * as Haptics from "expo-haptics"
-import { forwardRef, useCallback } from "react"
+import { forwardRef } from "react"
 import {
   Pressable as DefaultPressable,
   type PressableProps as DefaultPressableProps,
   type GestureResponderEvent,
   type View
 } from "react-native"
+
+import { useUserSettingsStore } from "@/hooks/use-user-settings"
 
 export type PressableProps = DefaultPressableProps & {
   /**
@@ -33,8 +35,12 @@ export type PressableProps = DefaultPressableProps & {
  */
 export const Pressable = forwardRef<View, PressableProps>(
   ({ haptics, onPress, ...props }, ref) => {
-    const onPressWrapper = useCallback(
-      (event: GestureResponderEvent) => {
+    const isHapticFeedbackEnabled = useUserSettingsStore(
+      (state) => state.isHapticFeedbackEnabled
+    )
+
+    const onPressWrapper = (event: GestureResponderEvent) => {
+      if (isHapticFeedbackEnabled) {
         switch (haptics) {
           case "success":
             void Haptics.notificationAsync(
@@ -66,11 +72,10 @@ export const Pressable = forwardRef<View, PressableProps>(
             break
           default:
         }
+      }
 
-        onPress?.(event)
-      },
-      [haptics, onPress]
-    )
+      onPress?.(event)
+    }
 
     return <DefaultPressable onPress={onPressWrapper} ref={ref} {...props} />
   }

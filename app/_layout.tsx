@@ -1,17 +1,15 @@
 import "@/assets/globals.css"
 
 import { SpaceMono_400Regular as SpaceMono400Regular } from "@expo-google-fonts/space-mono"
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider
-} from "@react-navigation/native"
+import { ThemeProvider } from "@react-navigation/native"
 import { useFonts } from "expo-font"
 import { SplashScreen, Stack } from "expo-router"
 import { useColorScheme } from "nativewind"
 import { useEffect } from "react"
 
 import { ToastContainer } from "@/components/toast-container"
+import { useUserSettingsStore } from "@/hooks/use-user-settings"
+import { DarkTheme, DefaultTheme } from "@/lib/colors/navigation-theme"
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -28,9 +26,15 @@ export const unstable_settings = {
 void SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
+  const [isFontLoaded, error] = useFonts({
     SpaceMono400Regular
   })
+  const isReady = useUserSettingsStore((state) => state.isReady)
+  const loaded = isFontLoaded && isReady
+
+  // eslint-disable-next-line @typescript-eslint/unbound-method -- false positive
+  const { setColorScheme } = useColorScheme()
+  const colorScheme = useUserSettingsStore((state) => state.colorScheme)
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
@@ -39,9 +43,10 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
+      setColorScheme(colorScheme)
       void SplashScreen.hideAsync()
     }
-  }, [loaded])
+  }, [colorScheme, loaded, setColorScheme])
 
   if (!loaded) {
     return null
@@ -57,6 +62,10 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="settings"
+          options={{ title: "Settings", headerBackTitle: "Back" }}
+        />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
       </Stack>
 

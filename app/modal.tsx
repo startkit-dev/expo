@@ -11,7 +11,7 @@ export default function ModalScreen() {
     <View className="flex-1 items-center justify-center bg-background">
       <Text className="text-xl font-bold">Modal</Text>
       <View className="my-7 h-px w-4/5" />
-      <Text className="rounded-md bg-yellow-200 p-2 dark:bg-yellow-800 dark:text-black">
+      <Text className="rounded-md bg-yellow-200 p-2 text-black dark:bg-yellow-800">
         {env.EXPO_PUBLIC_APP_ENV}
       </Text>
       <EditScreenInfo path="app/modal.tsx" />

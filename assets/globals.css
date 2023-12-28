@@ -10,8 +10,16 @@
     --primary: 346.8 77.2% 49.8%; /* #CF364C */
     --primary-foreground: 355.7 100% 97.3%; /* #fff1f2 */
 
+    --secondary: 240 4.8% 95.9%; /* #f4f4f5 */
+    --secondary-foreground: 240 5.9% 10%; /* #18181b */
+
+    --muted: 240 4.8% 95.9%; /* #f4f4f5 */
+    --muted-foreground: 240 3.8% 46.1%; /* #71717a */
+
     --destructive: 0 84.2% 60.2%; /* #ef4444 */
     --destructive-foreground: 0 0% 98%; /* #fafafa */
+
+    --border: 240 5.9% 90%; /* #27272a */
   }
 
   .dark:root {
@@ -21,7 +29,15 @@
     --primary: 346.8 77.2% 49.8%; /* #CF364C */
     --primary-foreground: 355.7 100% 97.3%; /* #fff1f2 */
 
+    --secondary: 240 3.7% 15.9%; /* #27272a */
+    --secondary-foreground: 0 0% 98%; /* #fafafa */
+
+    --muted: 0 0% 15%; /* 262626 */
+    --muted-foreground: 240 5% 64.9%; /* #a1a1aa */
+
     --destructive: 0 62.8% 30.6%; /* #7f1d1d */
     --destructive-foreground: 0 85.7% 97.3%; /* #fef2f2 */
+
+    --border: 240 3.7% 15.9%; /* #27272a */
   }
 }
