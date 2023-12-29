@@ -5,7 +5,7 @@ import OriginalToast, {
   type ToastProps
 } from "react-native-toast-message"
 
-import { cls } from "@/lib/utils/cls"
+import { cls } from "@/lib/cls"
 
 import { Pressable, type PressableProps } from "./pressable"
 import { Text } from "./text"

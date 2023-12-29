@@ -3,6 +3,7 @@
   "expo": {
     "name": "startkit-expo",
     "slug": "startkit-expo",
+    "owner": "startkit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,9 +16,11 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "dev.startkit.expo.ios",
       "supportsTablet": true
     },
     "android": {
+      "package": "dev.startkit.expo.android",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"

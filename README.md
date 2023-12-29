@@ -8,7 +8,10 @@
 
 - The latest [Expo 50](https://expo.dev) SDK.
 - [Expo Router](https://docs.expo.dev/router/introduction/)
+- [Tanstack Query](https://tanstack.com/query/v5) with persistent cache
 - Toasts!
+- Push Notifications
+- App settings section
 - [TailwindCSS](https://tailwindcss.com/) for utility-first CSS via [Nativewind v4](https://www.nativewind.dev/v4/overview).
 - Built-in Dark Mode support
 - CSS Variables for themes
@@ -24,10 +27,10 @@
 1. Clone this repo to your desired path:
 
    ```sh
-   git clone git@github.com:startkit-dev/startkit-expo.git my-new-project
+   git clone git@github.com:startkit-dev/expo.git my-new-project
    ```
 
-2. Rename the project in `app.json` and `package.json`
+2. Rename the project, including `ios.bundleIdentifier` and `android.package` in `app.json` and `package.json`
 
 3. Update your git remote to point to StartKit as `upstream`
 

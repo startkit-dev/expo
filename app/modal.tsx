@@ -4,7 +4,7 @@ import { EditScreenInfo } from "@/components/edit-screen-info"
 import { Text } from "@/components/text"
 import { View } from "@/components/view"
 import { env } from "@/env"
-import { isIOS } from "@/lib/utils/platform"
+import { isIOS } from "@/lib/platform"
 
 export default function ModalScreen() {
   return (

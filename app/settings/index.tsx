@@ -1,5 +1,8 @@
+import { Link } from "expo-router"
 import {
   CheckIcon,
+  ChevronRightIcon,
+  FileDigitIcon,
   Laptop2Icon,
   type LucideIcon,
   MoonIcon,
@@ -10,14 +13,18 @@ import { useColorScheme } from "nativewind"
 import { useRef } from "react"
 import { ScrollView, Switch } from "react-native"
 
-import { Pressable } from "@/components/pressable"
-import { Text } from "@/components/text"
+import {
+  SettingsSection,
+  SettingsSectionContent,
+  SettingsSectionHeader,
+  SettingsSectionItem
+} from "@/components/settings/settings"
 import { View } from "@/components/view"
 import {
   type ColorScheme,
   useUserSettingsStore
 } from "@/hooks/use-user-settings"
-import { cls } from "@/lib/utils/cls"
+import { cls } from "@/lib/cls"
 
 const THEME_SETTINGS: {
   label: string
@@ -52,52 +59,37 @@ export default function SettingsScreen() {
     <View className="flex-1 bg-background">
       <ScrollView contentContainerClassName="py-6 gap-8">
         {/* Section: App Theme */}
-        <View className="px-4">
-          <Text className="px-4 py-3 text-sm font-light uppercase tracking-widest text-muted-foreground">
-            App Theme
-          </Text>
+        <SettingsSection>
+          <SettingsSectionHeader>App Theme</SettingsSectionHeader>
 
-          <View className="rounded-xl border border-border">
+          <SettingsSectionContent>
             {THEME_SETTINGS.map(({ label, icon: Icon, value }, i) => (
-              <Pressable
+              <SettingsSectionItem
                 className={cls(
-                  "flex-row items-center justify-between px-4 py-3 active:opacity-50",
                   i !== 0 && "border-t border-border",
                   colorScheme === value && "bg-muted"
                 )}
-                haptics
+                icon={Icon}
                 key={value}
+                label={label}
                 onPress={() => {
                   onColorSchemeChange(value)
                 }}
               >
-                <View className="flex-row items-center gap-3">
-                  <Icon className="text-primary" size={18} />
-                  <Text className="text-lg">{label}</Text>
-                </View>
-
                 {colorScheme === value && (
                   <CheckIcon className="text-primary" size={20} />
                 )}
-              </Pressable>
+              </SettingsSectionItem>
             ))}
-          </View>
-        </View>
+          </SettingsSectionContent>
+        </SettingsSection>
 
         {/* Section: App */}
-        <View className="px-4">
-          <Text className="px-4 py-3 text-sm font-light uppercase tracking-widest text-muted-foreground">
-            App
-          </Text>
+        <SettingsSection>
+          <SettingsSectionHeader>App</SettingsSectionHeader>
 
-          <View className="rounded-xl border border-border">
-            <View className="flex-row items-center justify-between px-4 py-3">
-              <View className="flex-row items-center gap-3">
-                <WavesIcon className="text-primary" size={18} />
-
-                <Text className="text-lg">Haptic Feedback</Text>
-              </View>
-
+          <SettingsSectionContent>
+            <SettingsSectionItem icon={WavesIcon} label="Haptic Feedback">
               <Switch
                 onValueChange={(val) => {
                   toggleHapticFeedback(val)
@@ -105,9 +97,19 @@ export default function SettingsScreen() {
                 ref={switchRef}
                 value={isHapticFeedbackEnabled}
               />
-            </View>
-          </View>
-        </View>
+            </SettingsSectionItem>
+
+            <Link asChild href="/settings/debug">
+              <SettingsSectionItem
+                className="active:opacity-50"
+                icon={FileDigitIcon}
+                label="Debug"
+              >
+                <ChevronRightIcon className="text-muted-foreground" size={20} />
+              </SettingsSectionItem>
+            </Link>
+          </SettingsSectionContent>
+        </SettingsSection>
       </ScrollView>
     </View>
   )

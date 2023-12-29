@@ -3,7 +3,7 @@ import {
   type TextProps as DefaultTextProps
 } from "react-native"
 
-import { cls } from "@/lib/utils/cls"
+import { cls } from "@/lib/cls"
 
 export type TextProps = DefaultTextProps
 
