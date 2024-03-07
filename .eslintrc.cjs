@@ -25,7 +25,7 @@ module.exports = {
       extends: ["plugin:@typescript-eslint/disable-type-checked"]
     },
     /**
-     * Config files (ex: jest.config.js, prettier.config.js, tailwind.config.js)
+     * Config files (ex: prettier.config.js, tailwind.config.js)
      */
     {
       files: ["*.config.{js,ts}"],
@@ -39,19 +39,11 @@ module.exports = {
       }
     },
     /**
-     * Jest Configuration
+     * Test Configuration
      */
     {
       files: ["**/__tests__/**/*.{ts,tsx}", "**/*.test.{ts,tsx}"],
-      env: {
-        jest: true
-      },
-      extends: [
-        require.resolve("@vercel/style-guide/eslint/jest"),
-        require.resolve("@vercel/style-guide/eslint/jest-react"),
-        "plugin:jest/style"
-      ],
-      plugins: ["jest"],
+      extends: [require.resolve("@vercel/style-guide/eslint/vitest")],
       rules: {
         /**
          * Allow non-null assertions in tests

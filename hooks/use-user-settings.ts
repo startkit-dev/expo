@@ -41,8 +41,7 @@ export const useUserSettingsStore = create<UserSettingsState>()(
       isHapticFeedbackEnabled: true as boolean,
       toggleHapticFeedback: (enabled) => {
         set((current) => ({
-          isHapticFeedbackEnabled:
-            enabled === undefined ? !current.isHapticFeedbackEnabled : enabled
+          isHapticFeedbackEnabled: enabled ?? !current.isHapticFeedbackEnabled
         }))
       },
 

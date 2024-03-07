@@ -20,7 +20,7 @@
 - [Typescript](https://www.typescriptlang.org/) for a rock-solid codebase
 - Strict, recommended [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) config using the [Vercel Style Guide](https://github.com/vercel/style-guide) for readable, safe code.
 - Extra linting power with [Oxlint](https://oxc-project.github.io)
-- [Jest](https://jestjs.io/) testing, optimized for Expo.
+- [Vitest](https://vitest.dev) testing.
 
 ## Starting a new project with StartKit
 
@@ -96,7 +96,7 @@ to check for format errors, run:
 bun run format:check
 ```
 
-### Testing via Jest
+### Testing
 
 ```sh
 bun run test
